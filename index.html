@@ -84,6 +84,7 @@
       <p id="line1"></p>
       <p id="line2"></p>
       <p id="line3"></p>
+      <p id="line4"></p>
       <span id="cursor"></span>
     </div>
 
@@ -100,6 +101,7 @@
       const line1 = document.getElementById("line1");
       const line2 = document.getElementById("line2");
       const line3 = document.getElementById("line3");
+      const line4 = document.getElementById("line4");
       const cursor = document.getElementById("cursor");
 
       // Simple "typing" effect
@@ -118,21 +120,25 @@
       // This function controls the whole show
       async function runAnimation() {
         // 1. Type the first line
-        type(line1, ">I am too nervous to just type ...", 100);
+        type(line1, ">Hyyyyy ...", 100);
+        await new Promise((r) => setTimeout(r, 3000)); // Wait 4 sec
+
+        // 2. Type the first line
+        type(line2, ">I am too nervous to just type ...", 100);
         await new Promise((r) => setTimeout(r, 3000)); // Wait 3 sec
 
-        // 2. Type the second line
-        type(line2, "> So i thought to write in form of code...", 100);
+        // 3. Type the second line
+        type(line3, "> So i thought to write in form of code...", 100);
         await new Promise((r) => setTimeout(r, 5000)); // Wait 3 sec
 
-        // 3. Type the third line
-        type(line3, "> And my answer is yes...", 100);
+        // 4. Type the third line
+        type(line4, "> And my answer is yes...", 100);
         await new Promise((r) => setTimeout(r, 3000)); // Wait 3 sec
 
-        // 4. Hide the terminal
+        // 5. Hide the terminal
         terminal.style.display = "none";
 
-        // 5. Show the final, beautiful message
+        // 6. Show the final, beautiful message
         finalMessage.style.display = "block";
       }
 
